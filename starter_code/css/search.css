@@ -1,7 +1,81 @@
+html {
+    font-size: 48px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.7;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.navbar-collapse {
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    padding: 0.5rem 1.5rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.search-section {
+    padding: 3.5rem 1rem 0;
+    height: 100vh;
+}
+
+.all-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.card {
+    border-style: solid;
+    margin-bottom: 70px
+}
+
+.first-card {
+    margin-top: 70px;
+}
 
 
-h3 {
-    font-size: 100px;
-    margin-top: 50px;
-    color: #2b3573;
+footer {
+    padding: 1rem;
+    background: black;
+    color: white;
+}
+
+
+
+@media screen and (min-width: 768px) and (min-device-width: 768px) {
+    html {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (min-device-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    .navbar-collapse {
+        position: unset;
+        justify-content: flex-end;
+    }
 }

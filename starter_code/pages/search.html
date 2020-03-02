@@ -12,44 +12,59 @@
     <title>Search</title>
 </head>
 <body>
-<section>
-    <h3>Can't remember the title of a song? Or its artis? Let Bunggul help you!</h3>
-    <input>
-    <button type="submit">Search</button>
-
-    <div class="container">
-        <div class="row">
-            <div class="card">
-                <h4>Song title</h4>
-                <h5>Artist</h5>
-                <h5>Link</h5>
-                <h5>Rate</h5>
-            </div>
-            <div class="card">
-                <h4>Song title</h4>
-                <h5>Artist</h5>
-                <h5>Link</h5>
-                <h5>Rate</h5>
-            </div>
-            <div class="card">
-                <h4>Song title</h4>
-                <h5>Artist</h5>
-                <h5>Link</h5>
-                <h5>Rate</h5>
-            </div>
-            <div class="card">
-                <h4>Song title</h4>
-                <h5>Artist</h5>
-                <h5>Link</h5>
-                <h5>Rate</h5>
-            </div>
-
-        </div>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">
+        <div><strong>BUNGGUL</strong></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse bg-light" id="navbarNavDropdown">
+        <ul class="navbar-nav d-flex justify-content-center align-items-end">
+            <li class="nav-item">
+                <div class="nav-link">
+                    <a href="./search.html">Search</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div id="sign-up-button" class="nav-link">Sign Up</div>
+            </li>
+            <li class="nav-item">
+                <div id="sign-in-button" class="nav-link">Sign In</div>
+            </li>
+        </ul>
     </div>
-
-
+</nav>
+<section class="search-section">
+    <div class="search-title">
+        <h3>Find out the song in seconds!</h3>
+        <p>Let Bulggun help you out</p>
+    </div>
+    <div>
+        <input type="text" placeholder="Search..">
+    </div>
+    <div class="all-cards">
+        <div class="card first-card">
+            <img src="" alt="random-image1">
+            <h3>Song title</h3>
+            <p>Artist</p>
+        </div>
+        <div class="card">
+            <img src="" alt="random-image2">
+            <h3>Song title</h3>
+            <p>Artist</p>
+        </div>
+        <div class="card">
+            <img src="" alt="random-image3">
+            <h3>Song title</h3>
+            <p>Artist</p>
+        </div>
+    </div>
 </section>
+
+<footer>&copy; Copyright 2020 Bunggul</footer>
+
 
 <script src="../js/models/api.js"></script>
 <script src="../js/search.js"></script>

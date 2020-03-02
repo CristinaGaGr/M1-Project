@@ -1,0 +1,133 @@
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    display: flex;
+    visibility: hidden;
+}
+
+.custom-modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.custom-modal form i {
+    font-size: 1rem;
+    margin-right: 0.8rem;
+    color: darkgrey;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fade-out 0.5s ease-in-out forwards;
+}
+
+#check {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.check {
+    animation: check 2s ease-in-out;
+}
+
+#check i {
+    color: limegreen;
+}
+
+@media screen and (min-width: 768px) and (min-device-width: 768px) {
+    .custom-modal {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: unset;
+        height: unset;
+        padding: 2rem;
+    }
+
+    .custom-modal form {
+        min-width: 16rem;
+    }
+
+    .custom-modal form i {
+        font-size: 1rem;
+        margin-right: 16px;
+    }
+}
+
+
+@media screen and (min-width: 1024px) and (min-device-width: 1024px) {
+    .custom-modal {
+        padding: 5rem;
+    }
+
+    .custom-modal form {
+        min-width: 20rem;
+    }
+
+    .custom-modal form i {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes check {
+    0% {
+        opacity: 0;
+        font-size: 1rem;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        font-size: 10rem;
+    }
+}

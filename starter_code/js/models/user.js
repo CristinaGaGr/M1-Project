@@ -1,7 +1,10 @@
 //Class user
 
 class User {
-	constructor() {
-		console.log('new user!!')
+	constructor(username, email, password) {
+		this.username = username;
+		this.email = email;
+		this.password = password;
 	}
 }
+
