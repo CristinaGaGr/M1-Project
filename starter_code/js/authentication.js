@@ -82,6 +82,8 @@ $signUpForm.addEventListener('submit', (e) => {
 
 const $signInButton = document.getElementById('sign-in-button');
 const $signInModal = document.getElementById('sign-in-modal');
+const $username2 = document.getElementById('username2');
+const $password2 = document.getElementById('password2');
 
 
 $signInButton.addEventListener('click', () => {
@@ -98,35 +100,55 @@ $signInButton.addEventListener('click', () => {
 const $signInForm = document.getElementById('sign-in-form');
 const $nav = document.getElementsByTagName('nav');
 
+
 $signInForm.addEventListener('submit', (e) => {
 	e.preventDefault();
-	const formData = new FormData(e.target);
+	const form = e.target;
+	const formData = new FormData(form);
 	const username = formData.get('username');
 	const password = formData.get('password');
 
 	//Empezar validaciones: Copiar FormValidator , newFormvalidator (username, password)
 	//Si no hay errores (flag igual) haces toda la lógica que hay aquí abajo.
 
-	const stored = localStorage.getItem(username);
-	console.log(stored);
-	if (stored) {
-		const user = JSON.parse(stored);
-		if (user.password !== password) {
-		}
+	const formValidator = new FormValidator(username, password);
+	let hasError = false;
+
+	formValidator.deleteErrors();
+
+	if (!formValidator.checkUserName()) {
+		hasError = true;
+		formValidator.errorCreator('Username is required', $username2);
 	}
-	e.target.reset();
-	$signInModal.className = $signInModal.className.replace('fade-in', 'fade-out');
-	document.body.style.overflow = 'auto';
 
-	$check.className = 'check';
-	removeCheckAnimation();
+	if (!formValidator.checkPassword()) {
+		hasError = true;
+		formValidator.errorCreator('Password not valid', $password2);
+	}
 
-	$signInButton.innerText = `Hello ${username}`;
-	$signUpButton.innerText = '';
+	if (!hasError) {
 
-	let d = document.getElementById('sign-in-button');
-	d.className += ' confirmed';
 
+		const stored = localStorage.getItem(username);
+		if (stored) {
+			const user = JSON.parse(stored);
+			if (user.password !== password) {
+			}
+		}
+		e.target.reset();
+		$signInModal.className = $signInModal.className.replace('fade-in', 'fade-out');
+		document.body.style.overflow = 'auto';
+
+		$check.className = 'check';
+		removeCheckAnimation();
+
+
+		$signInButton.innerText = `Hello ${username}`;
+		$signUpButton.innerText = '';
+
+		let d = document.getElementById('sign-in-button');
+		d.className += ' confirmed';
+	}
 
 });
 
