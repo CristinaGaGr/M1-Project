@@ -108,8 +108,7 @@ $signInForm.addEventListener('submit', (e) => {
 	const username = formData.get('username');
 	const password = formData.get('password');
 
-	//Empezar validaciones: Copiar FormValidator , newFormvalidator (username, password)
-	//Si no hay errores (flag igual) haces toda la lógica que hay aquí abajo.
+
 
 	const formValidator = new FormValidator(username, password);
 	let hasError = false;
@@ -133,6 +132,7 @@ $signInForm.addEventListener('submit', (e) => {
 		if (stored) {
 			const user = JSON.parse(stored);
 			if (user.password !== password) {
+				console.log('error');
 			}
 		}
 		e.target.reset();

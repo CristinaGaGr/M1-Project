@@ -63,6 +63,10 @@
     color: limegreen;
 }
 
+.small, small {
+    color: red;
+}
+
 @media screen and (min-width: 768px) and (min-device-width: 768px) {
     .custom-modal {
         top: 50%;
@@ -83,9 +87,7 @@
     }
 }
 
-.small, small {
-    color: red;
-}
+
 
 @media screen and (min-width: 1024px) and (min-device-width: 1024px) {
     .custom-modal {
