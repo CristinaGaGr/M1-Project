@@ -121,7 +121,15 @@ article.card {
 }
 
 @media screen and (min-width: 1024px) and (min-device-width: 1024px) {
-
+    .all-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 260px;
+        padding: 20px;
+        flex-direction: column;
+    }
 }
 
 

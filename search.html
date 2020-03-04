@@ -44,12 +44,70 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <div class="search-bar-icon">
-        <input class="search__input search-bar" type="text" placeholder="Search">
+        <input class="search__input form-control" id="search-input" type="text" placeholder="Search">
     <button class="search-btn"><i class="fas fa-search"></i></button>
     </div>
     <div class="all-cards">
     </div>
 </section>
+
+<div id="sign-up-modal" class="custom-modal">
+    <form id="sign-up-form" autocomplete="off">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <div id="username" class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input class="form-control" type="text" name="username"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div id="email" class="input-wrapper">
+                <i class="fas fa-at"></i>
+                <input class="form-control" type="text" name="email"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div id="password" class="input-wrapper">
+                <i class="fas fa-lock"></i>
+                <input class="form-control" type="password" name="password"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="repeatPassword">Repeat password</label>
+            <div id="repeatPassword" class="input-wrapper">
+                <i class="fas fa-unlock-alt"></i>
+                <input class="form-control" type="password" name="repeatPassword"/>
+            </div>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Sign Up</button>
+    </form>
+</div>
+
+
+<div id="sign-in-modal" class="custom-modal">
+    <form id="sign-in-form" autocomplete="off">
+        <div class="form-group">
+            <label for="username2">Username</label>
+            <div id="username2" class="input-wrapper">
+                <i class="fas fa-user"></i>
+                <input class="form-control" type="text" name="username"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password2">Password</label>
+            <div id="password2" class="input-wrapper">
+                <i class="fas fa-lock"></i>
+                <input class="form-control" type="password" name="password"/>
+            </div>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Sign In</button>
+    </form>
+</div>
+<div id="check">
+    <i class="far fa-check-circle"></i>
+</div>
 
 <footer>&copy; Copyright 2020 Bunggul</footer>
 
@@ -58,7 +116,11 @@
 <!--TODO: TO BE DELETE-->
 
 <script src="js/models/api.js"></script>
+<script src="js/models/user.js"></script>
 <script src="js/search.js"></script>
+<script src="js/models/validations.js"></script>
+<script src="js/authentication.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

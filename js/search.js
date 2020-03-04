@@ -1,6 +1,6 @@
 //funciones para el search
 
-let userInput = document.querySelector('.search-bar');
+let userInput = document.getElementById('search-input');
 
 let searchButton = document.querySelector('.search-btn');
 
