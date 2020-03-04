@@ -162,6 +162,18 @@ const removeCheckAnimation = () => {
 };
 
 
+const closeModals = (event) => {
+	const parent = event.target.parentNode.parentNode;
+	parent.className = parent.className.replace('fade-in', 'fade-out');
+	document.body.style.overflow = 'auto';
+};
+
+let closeButtons = [...document.getElementsByClassName('close')];
+closeButtons.forEach((e) => {
+	e.addEventListener('click', closeModals);
+});
+
+
 
 
 

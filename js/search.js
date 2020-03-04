@@ -9,7 +9,8 @@ let allCards = document.querySelector('.all-cards');
 
 //Fetch API canciones
 
-const myApi = () => {
+const myApi = (e) => {
+	e.preventDefault();
 	allCards.innerHTML = '';
 	fetch(`https://itunes.apple.com/search?limit=15&entity=musicTrack&term=${userInput.value}`)
 		.then(response => response.json())
@@ -22,6 +23,8 @@ const myApi = () => {
 				let audio = e.previewUrl;
 				let artistUrl = e.artistViewUrl;
 				let genre = e.primaryGenreName;
+				myResultName = myResultName.length > 30 ? myResultName.substr(0, 30) + '...' : myResultName;
+
 
 				let newArticle = document.createElement('article');
 				newArticle.className = 'card';
@@ -43,12 +46,9 @@ const myApi = () => {
 				allCards.appendChild(newArticle);
 			});
 			let allPlayBtn = document.getElementsByClassName('play-music');
-			console.log(allPlayBtn);
 			Array.from(allPlayBtn).forEach((element) => {
 				element.addEventListener('click', playMusic);
-
 			});
-
 		})
 };
 
@@ -64,6 +64,44 @@ const playMusic = (event) => {
 		currentAudio.pause();
 	}
 };
+
+
+//DATOS FAKE
+
+// 	songs.forEach(e => {
+// 		let myResultName = e.trackName;
+// 		let myResultArtist = e.artistName;
+// 		let myResultPhoto = e.artworkUrl100;
+// 		let audio = e.previewUrl;
+// 		let artistUrl = e.artistViewUrl;
+// 		let genre = e.primaryGenreName;
+//
+// 		myResultName = myResultName.length > 30 ? myResultName.substr(0, 30) + '...' : myResultName;
+//
+// 		let newArticle = document.createElement('article');
+// 		newArticle.className = 'card';
+// 		newArticle.innerHTML = `
+// 				 <img class="random-image" src="${myResultPhoto}" alt="artist-photo"/>
+// 				 <div class="wrap-track-info">
+//            			 <h3 class="song-title">${myResultName}</h3>
+//            			 <p class="genre">${genre}</p>
+//            			 <a target="_blank" href="${artistUrl}" class="artist">${myResultArtist}</a>
+//            		 </div>
+//            		 <audio controls>
+//                  	<source src="${audio}"/>
+//           		 </audio>
+//           		 <button class="play-music">
+//           		 	<i class="far fa-play-circle"></i>
+//           		 	<i class="far fa-pause-circle"></i>
+// 				</button>
+// 				`;
+// 		allCards.appendChild(newArticle);
+// 	});
+// let allPlayBtn = document.getElementsByClassName('play-music');
+// Array.from(allPlayBtn).forEach((element) => {
+// 	element.addEventListener('click', playMusic);
+//
+// });
 
 
 

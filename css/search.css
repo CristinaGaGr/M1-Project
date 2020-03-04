@@ -1,7 +1,7 @@
 
 .search-section {
     padding: 4.5rem 1rem 0;
-    min-height: 100vh;
+    min-height: calc(100vh - 3.5rem);
 }
 
 .find-title {
@@ -10,22 +10,13 @@
     font-size: 1.5rem;
     line-height: 1.2;
     font-weight: bolder;
-    margin-left: 10px;
 }
 
 .find-help {
     font-weight: 500;
 }
 
-.search-bar {
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 68px;
-    width: 100%;
-    padding: 2px 23px 2px 30px;
-    outline: 0;
-    background-color: #f5f5f5;
-}
+
 
 .search-bar-icon {
     display: flex;
@@ -41,26 +32,24 @@ button {
     padding-left: 0.5rem;
 }
 
-.form-control-borderless {
-    border: none;
+button:focus {
+    outline: none;
 }
+
+
 
 .wrap-track-info {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-left: 10px;
+    flex: 1;
 }
 
 audio {
     display: none;
 }
 
-.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-}
 
 
 .all-cards {
@@ -69,19 +58,19 @@ audio {
     flex-direction: column;
 }
 
-article.card {
-    height: 225px;
-    border-color: black;
-}
 
 
 .card {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    border-style: solid;
-    margin-bottom: 70px
+    margin-bottom: 1.5rem;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 24px 2px rgba(0,0,0,0.1);
+    padding: 10px;
 }
 
 .song-title {
@@ -89,12 +78,13 @@ article.card {
     font-weight: bold;
 }
 
+
 .card a {
     font-size: 0.8rem
 }
 
 .card img {
-    width: 5rem;
+    min-width: 5rem;
 }
 
 .genre {
@@ -129,6 +119,21 @@ article.card {
         width: 260px;
         padding: 20px;
         flex-direction: column;
+    }
+    input#search-input {
+        width: 35%;
+    }
+    .search-bar-icon {
+        justify-content: flex-start;
+    }
+    .play-music {
+        margin-top: 10px;
+    }
+    .song-title {
+        margin-top: 0.5rem;
+    }
+    .genre {
+        flex: 1;
     }
 }
 
