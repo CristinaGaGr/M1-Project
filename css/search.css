@@ -120,6 +120,9 @@ audio {
         padding: 20px;
         flex-direction: column;
     }
+    .search-section {
+        max-width: 960px;
+    }
     input#search-input {
         width: 35%;
     }
