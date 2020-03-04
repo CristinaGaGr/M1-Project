@@ -1,42 +1,6 @@
-html {
-    font-size: 48px;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-    opacity: 0.7;
-}
-
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
-
-.nav-link {
-    cursor: pointer;
-}
-
-.navbar-collapse {
-    position: absolute;
-    top: 3.5rem;
-    right: 0;
-    padding: 0.5rem 1.5rem;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: black;
-}
 
 .search-section {
-    padding: 3.5rem 1rem 0;
-    height: 100vh;
+    padding: 4.5rem 1rem 0;
 }
 
 .find-title {
@@ -45,13 +9,43 @@ a:hover {
     font-size: 1.5rem;
     line-height: 1.2;
     font-weight: bolder;
+    margin-left: 10px;
 }
 
+.find-help {
+    font-weight: 500;
+}
 
+.search-bar {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 68px;
+    width: 100%;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background-color: #f5f5f5;
+    margin-bottom: 50px;
+}
 
+.search-bar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .form-control-borderless {
     border: none;
+}
+
+.wrap-track-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+audio {
+    display: none;
 }
 
 .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
@@ -62,46 +56,64 @@ a:hover {
 
 
 .all-cards {
-display: flex;
-justify-content: space-between;
-flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
+article.card {
+    height: 225px;
+    border-color: black;
+}
+
+
 .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-style: solid;
     margin-bottom: 70px
 }
 
-
-.random-image {
-    width: 350px;
-    height: 280px;
+.song-title {
+    font-size: 1rem;
+    font-weight: bold;
 }
 
+.card a {
+    font-size: 0.8rem
+}
 
-footer {
-padding: 1rem;
-background: black;
-color: white;
+.card img {
+    width: 5rem;
+}
+
+.genre {
+    display: none;
+}
+
+.play-music {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.play-music i {
+    font-size: 1.5rem;
 }
 
 
 
 @media screen and (min-width: 768px) and (min-device-width: 768px) {
-html {
-    font-size: 36px;
-}
+    .genre {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1024px) and (min-device-width: 1024px) {
-html {
-    font-size: 16px;
-}
 
-.navbar-collapse {
-    position: unset;
-    justify-content: flex-end;
-}
 }
 
 

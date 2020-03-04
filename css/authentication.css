@@ -67,6 +67,20 @@
     color: red;
 }
 
+
+@keyframes check {
+    0% {
+        opacity: 0;
+        font-size: 1rem;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        font-size: 30rem;
+    }
+}
+
+
 @media screen and (min-width: 768px) and (min-device-width: 768px) {
     .custom-modal {
         top: 50%;
@@ -85,6 +99,18 @@
         font-size: 1rem;
         margin-right: 16px;
     }
+    @keyframes check {
+        0% {
+            opacity: 0;
+            font-size: 1rem;
+        }
+        100% {
+            opacity: 1;
+            visibility: visible;
+            font-size: 50rem;
+        }
+    }
+
 }
 
 
@@ -124,16 +150,3 @@
         visibility: hidden;
     }
 }
-
-@keyframes check {
-    0% {
-        opacity: 0;
-        font-size: 1rem;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-        font-size: 10rem;
-    }
-}
-

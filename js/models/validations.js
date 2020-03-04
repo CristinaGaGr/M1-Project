@@ -31,8 +31,24 @@ class FormValidator {
 		location.parentNode.insertBefore(small, location.nextSibling);
 	}
 
-	deleteErrors (){
+	deleteErrors() {
 		let errors = [...document.getElementsByClassName('form-text')];
 		errors.forEach(error => error.remove());
+	}
+}
+
+
+class FormValidatorSignIn extends FormValidator {
+	constructor(username, password, user) {
+		super(username, password);
+		this.user = user;
+	}
+
+	validatePassword() {
+		return this.password === this.user.password;
+	}
+
+	checkUser() {
+		return this.user;
 	}
 }

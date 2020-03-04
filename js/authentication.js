@@ -108,12 +108,14 @@ $signInForm.addEventListener('submit', (e) => {
 	const username = formData.get('username');
 	const password = formData.get('password');
 
+	let user = localStorage.getItem(username);
+	user = JSON.parse(user);
 
-
-	const formValidator = new FormValidator(username, password);
+	const formValidator = new FormValidatorSignIn(username, password, user);
 	let hasError = false;
 
 	formValidator.deleteErrors();
+
 
 	if (!formValidator.checkUserName()) {
 		hasError = true;
@@ -122,19 +124,20 @@ $signInForm.addEventListener('submit', (e) => {
 
 	if (!formValidator.checkPassword()) {
 		hasError = true;
-		formValidator.errorCreator('Password not valid', $password2);
+		formValidator.errorCreator('Password is required', $password2);
+	}
+
+	if (!hasError && !formValidator.checkUser()) {
+		hasError = true;
+		formValidator.errorCreator('User does not exist', $username2);
+	}
+
+	if (formValidator.checkUser() && !formValidator.validatePassword()) {
+		hasError = true;
+		formValidator.errorCreator('Incorrect password', $password2);
 	}
 
 	if (!hasError) {
-
-
-		const stored = localStorage.getItem(username);
-		if (stored) {
-			const user = JSON.parse(stored);
-			if (user.password !== password) {
-				console.log('error');
-			}
-		}
 		e.target.reset();
 		$signInModal.className = $signInModal.className.replace('fade-in', 'fade-out');
 		document.body.style.overflow = 'auto';
