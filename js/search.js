@@ -42,6 +42,9 @@ const myApi = (e) => {
           		 	<i class="far fa-play-circle"></i>
           		 	<i class="far fa-pause-circle"></i>
 				</button>
+				<button class="favorite">
+				<i class="fas fa-heart"></i>
+				</button>
 				`;
 				allCards.appendChild(newArticle);
 			});
