@@ -122,6 +122,7 @@ audio {
     }
     .search-section {
         max-width: 960px;
+        margin: 0 auto;
     }
     input#search-input {
         width: 35%;
